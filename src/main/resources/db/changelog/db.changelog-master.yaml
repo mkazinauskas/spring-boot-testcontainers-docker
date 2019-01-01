@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: modestukasai
+      changes:
+        - createTable:
+            tableName: entries
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: text
+                  constraints:
+                    nullable: false
+        - createSequence:
+            schemaName: public
+            sequenceName: entries_sequence
+            incrementBy: 1
+            startValue: 1
