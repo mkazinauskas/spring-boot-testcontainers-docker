@@ -27,5 +27,7 @@ install:
   - echo "Skipping before script"
 
 script:
+  - echo "================| BUILDING OUTSIDE OF DOCKER CONTAINER |================"
   - ./gradlew build
+  - echo "================| BUILDING IN DOCKER CONTAINER |================"
   - docker build .
