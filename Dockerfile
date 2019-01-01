@@ -5,7 +5,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN ./gradlew build
+RUN ./gradlew build -i
 
 # ============ Production image ===================
 FROM openjdk:8-jre-slim
