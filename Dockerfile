@@ -5,7 +5,7 @@ WORKDIR /app
 
 COPY . .
 
-CMD ./gradlew build
+RUN ./gradlew build
 
 # ============ Production image ===================
 FROM openjdk:8-jre-slim
@@ -16,7 +16,7 @@ USER app
 WORKDIR /home/app
 
 COPY --from=builder /app/build/libs/example-*.jar app.jar
-COPY --from=builder /app/src/main/resources/application.properties application.properties
+COPY --from=builder /app/src/main/resources/application.yml application.yml
 
 EXPOSE 8080
 
