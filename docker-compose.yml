@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  app-db:
+    image: postgres:10-alpine
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: app_database
+    ports:
+    - "5432:5432"
+    volumes:
+    - pgdata:/data/database
+
+volumes:
+  pgdata:
+    driver: local

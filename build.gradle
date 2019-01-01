@@ -1,6 +1,7 @@
 buildscript {
     ext {
         springBootVersion = '2.1.1.RELEASE'
+        swaggerUIVersion = '2.9.2'
     }
     repositories {
         mavenCentral()
@@ -24,12 +25,15 @@ repositories {
 }
 
 dependencies {
-    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
-    implementation('org.springframework.boot:spring-boot-starter-web')
-    implementation('org.liquibase:liquibase-core')
-    implementation('org.testcontainers:postgresql:1.10.4')
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.liquibase:liquibase-core'
+    implementation 'org.testcontainers:postgresql:1.10.4'
 
-    runtime('org.postgresql:postgresql')
+    runtime 'org.postgresql:postgresql'
 
-    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    compile "io.springfox:springfox-swagger2:${swaggerUIVersion}"
+    compile "io.springfox:springfox-swagger-ui:${swaggerUIVersion}"
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

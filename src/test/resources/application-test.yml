@@ -4,4 +4,3 @@ spring:
     url: jdbc:tc:postgresql:10://hostname/databasename
   jpa:
     show-sql: true
-    properties.hibernate.jdbc.lob.non_contextual_creation: true
