@@ -1,17 +1,11 @@
 # ============ Builder image ===================
-FROM openjdk:8-jdk-alpine as builder
+FROM docker as builder
 
 USER root
 
-RUN apk add --no-cache docker
+RUN docker -v
 
-#VOLUME /run/docker.sock:/var/run/docker.sock
-#
-#VOLUME /usr/bin/docker:/usr/bin/docker
-
-#RUN cat /usr/bin/docker
-
-#RUN dockerd & docker ps
+RUN apk add --no-cache openjdk8
 
 WORKDIR /app
 
