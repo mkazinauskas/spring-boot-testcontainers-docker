@@ -5,7 +5,7 @@ USER root
 
 RUN docker -v
 
-RUN apk add --no-cache openjdk8
+RUN apk add --no-cache openjdk11
 
 WORKDIR /app
 
@@ -14,7 +14,7 @@ COPY . .
 RUN ./gradlew build -i
 
 # ============ Production image ===================
-FROM openjdk:8-jre-slim
+FROM openjdk:11-jre-slim
 
 RUN adduser --system app --home /app
 USER app
