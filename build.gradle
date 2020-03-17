@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '2.1.1.RELEASE'
+        springBootVersion = '2.2.5.RELEASE'
         swaggerUIVersion = '2.9.2'
     }
     repositories {
@@ -28,7 +28,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.liquibase:liquibase-core'
-    implementation 'org.testcontainers:postgresql:1.10.4'
+    implementation 'org.testcontainers:postgresql:1.13.0'
 
     runtime 'org.postgresql:postgresql'
 
