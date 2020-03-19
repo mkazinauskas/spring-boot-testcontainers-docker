@@ -1,0 +1,20 @@
+image: openjdk:11
+
+pipelines:
+  default:
+    - step:
+        size: 2x
+        services:
+          - docker
+        caches:
+          - gradle
+        script:
+          - export TESTCONTAINERS_RYUK_DISABLED=true
+          - bash ./gradlew build -i
+        artifacts:
+          - build/reports/**
+
+definitions:
+  services:
+    docker:
+      memory: 2048          
