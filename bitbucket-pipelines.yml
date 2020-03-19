@@ -3,7 +3,6 @@ image: openjdk:11
 pipelines:
   default:
     - step:
-        size: 2x
         services:
           - docker
         caches:
